@@ -88,9 +88,9 @@
     <tr>
     	<td align="right" valign="top">文章類型</td>
     	<td> <select id="" name="class" style="width: 100%">
-            <option value="文化" SELECTED>文化</option>  
-            <option value="生物">生物</option> 
-            <option value="建築">建築</option>
+            <option value="1" SELECTED>文化</option>  
+            <option value="2">生物</option> 
+            <option value="3">建築</option>
     	</select></td>
     </tr>
     <tr>

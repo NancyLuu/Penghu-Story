@@ -271,6 +271,8 @@ public class LoginController {
 	public ModelAndView animalPage() {
 		
 		ModelAndView model = new ModelAndView();
+		List content = loginService.selectContent(2);
+		model.addObject("animalContent", content);
 		
 		model.setViewName("animal");
 		
@@ -298,7 +300,7 @@ public class LoginController {
 		String position = (String) request.getParameter("position");
 		String email = (String) request.getParameter("email");
 		String phone = (String) request.getParameter("phone");
-		String pclass = (String) request.getParameter("class");
+		int pclass = Integer.parseInt(request.getParameter("class"));
 		String posttime = (String) request.getParameter("posttime");
 		String postloc = (String) request.getParameter("postloc");
 		String summary = (String) request.getParameter("summary");
@@ -321,7 +323,8 @@ public class LoginController {
 	public ModelAndView buildPage() {
 		
 		ModelAndView model = new ModelAndView();
-		
+		List content = loginService.selectContent(3);
+		model.addObject("buildContent", content);
 		model.setViewName("build");
 		
 		return model;
@@ -331,7 +334,8 @@ public class LoginController {
 	public ModelAndView pculturePage() {
 		
 		ModelAndView model = new ModelAndView();
-		
+		List content = loginService.selectContent(1);
+		model.addObject("pcultureContent", content);
 		model.setViewName("pculture");
 		
 		return model;
@@ -341,7 +345,8 @@ public class LoginController {
 	public ModelAndView cditalPage() {
 		
 		ModelAndView model = new ModelAndView();
-		
+		List content = loginService.selectContent(1);
+		model.addObject("pculture1Content", content);
 		model.setViewName("c01");
 		
 		return model;
@@ -350,7 +355,8 @@ public class LoginController {
 	public ModelAndView bditalPage() {
 		
 		ModelAndView model = new ModelAndView();
-		
+		List content = loginService.selectContent(3);
+		model.addObject("build1Content", content);
 		model.setViewName("b01");
 		
 		return model;
@@ -359,7 +365,8 @@ public class LoginController {
 	public ModelAndView aditalPage() {
 		
 		ModelAndView model = new ModelAndView();
-		
+		List content = loginService.selectContent(2);
+		model.addObject("animal1Content", content);
 		model.setViewName("a01");
 		
 		return model;

@@ -1,6 +1,8 @@
 package org.iii.web.login;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -50,6 +52,12 @@ public class LoginService {
 		
 	}
 	
+	public List selectContent(int t) {
+		List content = loginRepository.selectContent(t)	;
+		return content;
+
+	}
+	
 	public int insertUser(String username, String password, String email, String enabled) {
 
 		int updateCount = loginRepository.insertUser(username, password, email, enabled);
@@ -70,7 +78,7 @@ public class LoginService {
 	
 	}
 	
-	public int insertpub(String title, String author, String contact_name,String contact_phone,String unit,String job_title,String article_type,String publish_time,String publish,String Introduction,String keyword,String content,String reference_source) {
+	public int insertpub(String title, String author, String contact_name,String contact_phone,String unit,String job_title,int article_type,String publish_time,String publish,String Introduction,String keyword,String content,String reference_source) {
 
 		int updateCount = loginRepository.insertpub(title,author, contact_name,contact_phone,unit,job_title,article_type,publish_time,publish,Introduction,keyword,content,reference_source);
 		return updateCount;

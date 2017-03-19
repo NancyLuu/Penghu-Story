@@ -1,4 +1,6 @@
-﻿<!doctype html>
+﻿<%@taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
 <meta charset="utf-8">
@@ -48,15 +50,14 @@
   <div style="height: auto">
      <h2>研究手札</h2>
      <!--一個文章區塊-->
-    <div class="showPubilsh_Left_div">
-        <time>20 May,2015</time>
-      <h3>對於烏來觀光飯店開發的思考</h3>
-        <hr>
-        <h5>蔡侑霖</h5>
-        <hr>
-        <p>2015年3月，烏來部落遭遇北福溫泉大酒店開發案，開發商計畫利用烏來部落住宅區中的私有原保地及兩筆烏來區公所的公有原保地，循「興辦事業計畫」機制，投資八億，開發大型國際觀光旅館，號稱烏來有史以來最大的開發案。<br>
-
-		開發基地中私有原保地的地上權，均以30年至永久不等的期限設定給開發商，至於兩筆公有原保地，烏來區公所堅持必須透過烏來部落的部落會議來議決。在3月5日的部落會議上，大部分在地族人第一次接收到開發案的訊息，雖然不乏看好大型觀光旅館開發可以促進在地就業的族人，然而大部分族人其實充滿許多疑慮，包含居住安全、塞車的問題、是否真的能保障在地族人的就業，以及在住宅用地缺乏的狀況下將公有土地優先用於外來廠商的營業而非族人的居住問題，是否合理等問題。</p>
+     	<c:forEach items="${animalContent}" var="a">
+		       <tr>
+		       	<div><td><c:out value="${a.publish_time}"/></td></div>
+		        <div><td><c:out value="${a.author}" /></td></div>
+		        <div><td><c:out value="${a.title}"/></td></div>
+		        <div><td><c:out value="${a.Introduction}"/></td></div>
+		      </tr>
+		    </c:forEach>
     <img src="/resources/pic/sssccc.com_photo_0102248.jpg" width="314" height="209" alt=""/>
     <a href="/animal1" >繼續閱讀...</a>
     </div>
