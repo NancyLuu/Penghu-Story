@@ -1,0 +1,496 @@
+@charset "utf-8";
+header{
+	width: 100%;
+	background-color: 	#006666;
+	padding-top: 5px;
+	padding-bottom: 0px;
+	clear: left;
+
+}
+header p{
+	color: #727272;
+}
+.primary_header{
+	width: 100%;
+	background-color: #fff;
+	padding-top: 5px;
+	padding-bottom: 00px;
+}
+.my_primary_header{
+	width: 100%;
+	background-color: #fff;
+	padding-top: 5px;
+	padding-bottom: 00px;
+}
+.header_icon{
+	width: 80%;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+.primary_header ul{
+	margin-top: 0%;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 10%;
+	padding-right: 10%;
+	align-content: center;
+	width: 80%;
+}
+.my_primary_header ul{
+	margin-top: 0%;
+	margin-bottom: 0px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 10%;
+	padding-right: 10%;
+	align-content: center;
+	width: 80%;
+}
+.header_ul{
+	background-color: #339966;
+	width: 80%;
+}
+.my_header_ul{
+	background-color: #339966;
+	width: 80%;
+}
+
+/*下拉式列表*/
+	ul { /* 取消ul預設的內縮及樣式 */	
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    ul.drop-down-menu {
+		width: 103%;
+        border: 0px solid;
+        display: inline-block;
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 13px;
+		padding-top: 0;
+		padding-bottom: 0;
+		padding-left: 12%;
+		
+		background:#009933;/*#004d26;*/
+		height: auto;
+		text-align: center;
+		float: left;
+    }
+        ul.my_drop-down-menu {
+		width: 103%;
+        border: 0px solid;
+        display: inline-block;
+        font-family: 'Open Sans', Arial, sans-serif;
+        font-size: 13px;
+		padding-top: 0;
+		padding-bottom: 0;
+		padding-left: 12%;
+		
+		background:#009933;/*#004d26;*/
+		height: auto;
+		text-align: center;
+		float: left;
+    }
+    ul.drop-down-menu li {
+        position: relative;
+        white-space: nowrap;
+        border-right: 0px solid;
+		width: 200px;
+		height: auto;
+		text-align: center;
+		padding: 0 0px;
+		float: left;
+    }
+    ul.drop-down-menu > li:last-child {
+        border-right: none;
+    }
+    ul.drop-down-menu > li {
+        float: left; /* 只有第一層是靠左對齊*/
+    }
+     ul.drop-down-menu a {
+        background-color: #009933;/*#004d26;*/
+        color: #FFFFFF;
+        display: block;
+        padding: 0 0px;
+        text-decoration: none;
+        line-height: 40px;
+
+    }
+    ul.drop-down-menu a:hover { /* 滑鼠滑入按鈕變色*/
+        background-color:#00994d;
+        color: #fff;
+    }
+    ul.drop-down-menu li:hover > a { /* 滑鼠移入次選單上層按鈕保持變色*/
+        background-color:#006633;
+        color: #fff;
+    }
+	ul.drop-down-menu ul {
+        border: 0px solid;
+        position: absolute;
+        z-index: 99;
+        left: 0px;
+        top: 100%;
+        width: auto;
+		padding: 0px;
+    }
+    ul.drop-down-menu ul li {
+        border-bottom: #ccc 1px solid;
+    }
+    ul.drop-down-menu ul li:last-child {
+        border-bottom: none;
+    }
+	 ul.drop-down-menu ul { /*隱藏次選單*/
+        display: none;
+    }
+    ul.drop-down-menu li:hover > ul { /* 滑鼠滑入展開次選單*/
+        display: block;
+    }
+    
+    
+        ul.my_drop-down-menu li {
+        position: relative;
+        white-space: nowrap;
+        border-right: 0px solid;
+		width: 200px;
+		height: auto;
+		text-align: center;
+		padding: 0 0px;
+		float: left;
+    }
+    ul.my_drop-down-menu > li:last-child {
+        border-right: none;
+    }
+    ul.my_drop-down-menu > li {
+        float: left; /* 只有第一層是靠左對齊*/
+    }
+     ul.my_drop-down-menu a {
+        background-color: #009933;/*#004d26;*/
+        color: #FFFFFF;
+        display: block;
+        padding: 0 0px;
+        text-decoration: none;
+        line-height: 40px;
+
+    }
+    ul.my_drop-down-menu a:hover { /* 滑鼠滑入按鈕變色*/
+        background-color:#00994d;
+        color: #fff;
+    }
+    ul.my_drop-down-menu li:hover > a { /* 滑鼠移入次選單上層按鈕保持變色*/
+        background-color:#006633;
+        color: #fff;
+    }
+	ul.my_drop-down-menu ul {
+        border: 0px solid;
+        position: absolute;
+        z-index: 99;
+        left: 0px;
+        top: 100%;
+        width: auto;
+		padding: 0px;
+    }
+    ul.my_drop-down-menu ul li {
+        border-bottom: #ccc 1px solid;
+    }
+    ul.my_drop-down-menu ul li:last-child {
+        border-bottom: none;
+    }
+	 ul.my_drop-down-menu ul { /*隱藏次選單*/
+        display: none;
+    }
+    ul.my_drop-down-menu li:hover > ul { /* 滑鼠滑入展開次選單*/
+        display: block;
+    }
+
+html, body{
+	
+	height: auto; 
+	padding: 0px; 
+	font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+}
+.title {
+	font-weight: bold;
+	font-style: normal;
+	font-family: "Source Sans Pro";
+	text-align: center;
+	color: #FFFFFF;
+	letter-spacing: 2px;
+	
+}
+.container{
+	background-color: #fff;
+	width:80%;
+	height: auto;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	border-bottom-width: 0px;
+	padding-left: 10%;
+	padding-top: 0;
+	padding-right: 10%;
+	padding-bottom: 0px;
+}
+.container h2 {
+	color: #006600;
+	font-family: "Source Sans Pro";
+	text-align: left;
+}
+
+.container h3 {
+	color: #18191F;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.container h4 {
+	text-align: left;
+	color: #008028;
+}
+.container p {
+	padding-left: -2em;
+	padding-right: 2em;
+	text-align: justify;
+	line-height: 24px;
+	margin-top: 30px;
+	margin-bottom: 15px;
+	color: #31323B;
+}
+
+/*願景*/
+.origin{
+	width: 100%;
+	height: auto;	
+}
+.vision{
+	width: 100%;
+	height: auto;
+}
+
+/*計畫支援團隊*/
+.member{
+	width: 150px;
+	height: 200px;
+	background-color: #e6ffee;/*#ccffdd;*/
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 0px;
+	margin: 2%;
+	float: left;
+}
+
+/*聯絡我們*/
+.contact_map{
+	align: right;
+	width: 100%;
+	height: 300px;
+}
+.left_div{
+	width: 50%;
+	height: auto;
+	float: left;
+	color: #343434;
+	font-family: "Source Sans Pro";
+}
+.right_div{
+	width: 50%;
+	height: auto;
+	float: left;
+	
+}
+.contact_btn {
+    background-color: #009933;
+    border: none;
+    color: white;
+    padding: 5px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+	
+}
+
+/*文化學習頁面*/
+.team_header{
+	background-color: #00802b;/*#009933;#004d26;*/
+	 padding-left: 3%;
+	padding-right: 3%;
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+.team_header h2{
+	color: #FFFFFF;
+}
+.team_header h3{
+	color: #FFF;
+}
+ul.tab {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/*顯示文章*/
+.intro {
+	background-color: #FFFFFF;
+}
+.column {
+	width: 50%;
+	text-align: center;
+	float: left;
+	
+}
+.column_right {
+	width: 50%;
+	text-align: center;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	background:#ffffb3;
+	float: left;
+}
+.right_article {
+	width: 100%;
+	height: auto;
+}
+
+/* Float the list items side by side */
+ul.tab li {float: left;}
+
+/* Style the links inside the list items */
+ul.tab li a {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 17px;
+}
+
+/* Change background color of links on hover */
+ul.tab li a:hover {background-color: #ddd;}
+
+/* Create an active/current tablink class */
+ul.tab li a:focus, .active {background-color: #ccc;}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+.place_block{
+	width: 29%;
+	height: auto;
+	background-color: #FFF;
+	padding-top: 5px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	margin: 2%;
+	float: left;
+}
+	
+
+/*發表新文章*/
+.pubilsh_div{
+	width: 100%;
+	height: auto;
+	float: left;
+}
+input{
+	width: 100%; 
+	 
+	font-size: 14px; 
+	line-height: 18px; 
+	border: 1px solid #dddddd; 
+	padding: 10px;
+}
+textarea{
+	width: 100%; 
+	height: 125px; 
+	font-size: 14px; 
+	line-height: 18px; 
+	border: 1px solid #dddddd; 
+	padding: 10px;
+}
+/*顯示文章頁面*/
+.showPubilsh_Left_div{
+	width: 70%;
+	height: auto;
+}
+.showPubilsh_Left_div a{
+	color: #006620;
+	text-align: right;
+}
+/*顯示文章側邊攔*/
+.showPubilsh_Right_div{
+	width: 30%;
+	height: auto;
+	float: right;
+}
+
+/*搜尋頁面*/
+.search_Left_div{
+	width: 20%;
+	float: left;
+}
+.search_Right_div{
+	width: 80%;
+	float: left;
+}
+.search_map{
+	height: 500PX;
+}
+
+footer {
+	width: 80%;
+	background-color: #fff;
+	padding-top: 10px;
+	padding-left: 10%;
+	padding-right: 10%;
+	color: #7E7E7E;
+	font-size: 10px;
+}
+.noDisplay {
+	display: none;
+	height: 80%;
+}
+
+
+@media (max-width: 320px) {
+	ul.drop-down-menu li.right, 
+    ul.drop-down-menu li {float: none;}
+}
+
+/* Small Tablets */
+@media (min-width: 321px)and (max-width: 767px) {
+	ul.drop-down-menu li.right, 
+    ul.drop-down-menu li {float: none;}
+}
+
+@media (min-width: 768px) and (max-width: 1096px) {
+.column {
+	width: 100%;
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+.right_article {
+	width: 100%;
+	height: 100%;
+	padding-bottom: 25px;
+}
+.right_article {
+	height: auto;
+	padding-bottom: 27px;
+}
+}
+
+@media (max-width: 800px){
+
+}
