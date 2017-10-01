@@ -1,214 +1,288 @@
-﻿<!doctype html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<meta charset="utf-8">
-<title>發表新文章</title>
-<link href="/resources/css/hiasp.css" rel="stylesheet" type="text/css">
-<!-- link href="/resources/css/bootstrap.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script-->
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>澎湖故事島</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="resources/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="resources/css/modern-business.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- My set css -->
+    <link href="resources/css/my_.css" rel="stylesheet" type="text/css">
+    <link href="resources/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!--編輯器-->
+      <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+  <script>tinymce.init({ selector:'textarea' });</script>
+
+    <style type="text/css">
+    .wysihtml5-sandbox {
+      border: 1px solid #ccc !important;
+    }
+    </style>
+
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1636725-34']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
 </head>
 
 <body>
-<header class="primary_header">
- <div class="header_icon">
-    <a href="/"><img src="/resources/pic/Icon.jpg" alt=""  width="249" height="auto"/></a>
-  <p>Humanity lnnovation and Social Practice </p>
-  </div>
-  <div class="header_ul">
-  <ul class="drop-down-menu">
-	  <li><a href="">關於</a>
-    	<ul>
-			<li><a href="/origin">計畫緣起</a></li>
-			<li><a href="/team">計畫支援團隊</a></li>
-			<li><a href="/contact">聯絡我們</a></li>
-    	</ul>
-    </li>
-	  <li><a href="">實踐研究團隊</a>
-    	<ul>
-			<li><a href="/culture">文化學習</a></li>
-    	</ul>
-	</li>
-	  <li><a href="">發表平台</a>
-    	<ul>
-			<li><a href="/pculture">文化</a></li>
-			<li><a href="/build">建築</a></li>
-			<li><a href="/animal">生物</a></li>
-   			<li><a href="/publish">發表新文章</a></li>
-    	</ul>
-    </li>
-  </ul>
-  </div>
-</header>
-<main class="container">
 
-  <div style="height: 700px">
-      <div class="pubilsh_div">
-        <h2>發表平台</h2>
-       <form name='contactform' 
-					action="insertpublish" method="POST">
-      <table width="80%" border="0" cellpadding="5">
-  <tbody>
-   	<tr>
-   		<td align="right" valign="top" width="25%">標題</td>
-   		<td width="75%"> <input type="text" name="title" value="" maxlength="" style="width: 100%"></td>
-   	</tr>
-   	<tr>
-      <td  align="right" valign="top">發表人</td>
-      <td> <input type="text" name="author" value="" maxlength="" style="width: 100%"></td>
-    </tr>
-    <tr>
-    	<td colspan="2"> <hr></td>
-    </tr>
-    <tr>
-		<td colspan="2" align="left"> 發表人聯絡方式 </td>
-	</tr>
-    <tr>
-      <td  align="right" valign="top">姓名</td>
-      <td> <input type="text" name="postauthor" value="" maxlength="" style="width: 100%"></td>
-    </tr>
-    <tr>
-      <td  align="right" valign="top">單位</td>
-      <td> <input type="text" name="Units" value="" maxlength="" style="width: 100%"></td>
-    </tr>
-    <tr>
-      <td align="right" valign="top">職稱</td>
-      <td> <input type="text" name="position" value="" maxlength="" style="width: 100%"></td>
-    </tr>
-    <tr>
-      <td align="right" valign="top" >信箱</td>
-      <td> <input type="email" name="email" value="" style="width: 100%"></td>
-    </tr>
-    <tr>
-      <td  align="right" valign="top">電話</td>
-      <td> <input type="tel" name="phone" value="" maxlength="" style="width: 100%"></td>
-    </tr>
-    <tr>
-    	<td align="right" valign="top">文章類型</td>
-    	<td> <select id="" name="class" style="width: 100%">
-            <option value="1" SELECTED>文化</option>  
-            <option value="2">生物</option> 
-            <option value="3">建築</option>
-    	</select></td>
-    </tr>
-    <tr>
-    	<td align="right" valign="top">發表時間</td>
-    	<td><input type="date" name="posttime" value="" maxlength="" style="width: 100%"></td>
-    </tr>
-    <tr>
-      <td  align="right" valign="top">發表處</td>
-      <td> <input type="text" name="postloc" value="" maxlength="" style="width: 100%"></td>
-    </tr>
-    <tr>
-      <td  align="right" valign="top">摘要</td>
-      <td><div><textarea  name="summary" value="" maxlength="" style="width: 100%"></textarea></div> </td>
-    </tr>
-    <tr>
-    <td  align="right" valign="top">關鍵字</td>
-		<td><div><textarea class="textarea" name="keyword" value="" maxlength="" style="width: 100%"></textarea></div></td>
-    </tr>
-    <tr>
-    	<td  align="right" valign="top">文章全文</td>
-    	<td>
-    	
-    	<div>
-       <ul class="edit_ul">
-        <li>
-		  <div class="btn-group">
-			<a class="btn btn-default wysihtml5-command-active" data-wysihtml5-command="bold" title="CTRL+B" tabindex="-1" href="javascript:;" unselectable="on"><Button class="glyphicon glyphicon-bold"><b>B</b></Button></a>
-			<a class="btn  btn-default" data-wysihtml5-command="italic" title="CTRL+I" tabindex="-1" href="javascript:;" unselectable="on"><Button class="glyphicon glyphicon-italic"><i>I</i></Button></a>
-			<a class="btn  btn-default" data-wysihtml5-command="underline" title="CTRL+U" tabindex="-1" href="javascript:;" unselectable="on"><button>底線</button></a>  
-		  </div>
-		<div>
-		<p style="float:none">影片連結</p>
-				  <div class="form-group">
-					<input name="videolink" value="http://" class="bootstrap-wysihtml5-insert-link-url form-control" data-wysihtml5-dialog-field="href">
-				  </div> 
-		</div>
-		  <!-- div class="bootstrap-wysihtml5-insert-link-modal modal fade" data-wysihtml5-dialog="createLink">
-			<div class="modal-dialog ">
-			  <div class="modal-content">
-				<div class="modal-header">
-				  <a class="close" data-dismiss="modal">×</a>
-				  <p style="float:none">影片連結</p>
-				  <div class="form-group">
-					<input value="http://" class="bootstrap-wysihtml5-insert-link-url form-control" data-wysihtml5-dialog-field="href">
-				  </div> 
-				</div>
-				<div class="modal-body">
-				  <div class="form-group">
-					<input value="http://" class="bootstrap-wysihtml5-insert-link-url form-control" data-wysihtml5-dialog-field="href">
-				  </div> 
-				  <div class="checkbox">
-					<label> 
-					  <input type="checkbox" class="bootstrap-wysihtml5-insert-link-target" checked="">Open link in new window
-					</label>
-				  </div>
-				</div>
-				<div class="modal-footer">
-				  <a class="btn btn-default" data-dismiss="modal" data-wysihtml5-dialog-action="cancel" href="#">Cancel</a>
-				  <a href="#" class="btn btn-primary" data-dismiss="modal" data-wysihtml5-dialog-action="save">Insert link</a>
-				</div>
-			  </div>
+
+<!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+           <div class="navbar-brand"><a class="navbar-brand" href="/"><img src="resources/img/icon.png" alt="" width="200em"/></a></div>
+      <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
 			</div>
-		  </div-->
-  		<!-- a class="btn  btn-default" data-wysihtml5-command="createLink" title="Insert link" tabindex="-1" href="javascript:;" unselectable="on"> 
-     		 <Button class="glyphicon glyphicon-film">連結</Button> 
-  		</a-->
-	
-		  <div class="bootstrap-wysihtml5-insert-image-modal modal fade" data-wysihtml5-dialog="insertImage" style="display: none;">
-			<div class="modal-dialog ">
-			  <div class="modal-content">
-				<div class="modal-header">
-				  <a class="close" data-dismiss="modal">×</a>
-				  <h3>Insert image</h3>
-				</div>
-				<div class="modal-body">
-				  <div class="form-group">
-					<input value="http://" class="bootstrap-wysihtml5-insert-image-url form-control" data-wysihtml5-dialog-field="src">
-				  </div> 
-				</div>
-				<div class="modal-footer">
-				  <a class="btn btn-default" data-dismiss="modal" data-wysihtml5-dialog-action="cancel" href="#">Cancel</a>
-				  <a class="btn btn-primary" data-dismiss="modal" data-wysihtml5-dialog-action="save" href="#">Insert image</a>
-				</div>
-			  </div>
-			</div>
-		  </div>
-		  <a class="btn btn-default" data-wysihtml5-command="insertImage" title="Insert image" tabindex="-1" href="javascript:;" unselectable="on">
-			  <Button class="glyphicon glyphicon-picture">圖片</Button>
-		  </a>
-		</li>
-        </ul>
-        </div >
-    	
-    	<div><textarea class="textarea" name="paper" placeholder="Message" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea></div></td>
-    </tr>
-    <tr>
-    <td  align="right" valign="top">參考資料來源</td>
-		<td><div><textarea class="textarea" name="data" value="" maxlength="" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea></div></td>
-    </tr>
-  <tr>
-					<td colspan='2' align="right"><input id="btn_refirsted" class="contact_btn"  style="width: 10%" type="submit" value="送出" /></td>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">關於我們 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="origin.html">計畫緣起</a>
+                            </li>
+                            <li>
+                            	<a href="team.html">計畫支援團隊</a>
+                            </li>
+							<li>
+								<a href="contact.html">聯絡我們</a>
+								</li>
+						</ul>
+                    </li>
+                    <li>
+                       <a href="" class="dropdown-toggle" data-toggle="dropdown"> 計畫團隊 <b class="caret"></b></a>
+                       <ul class="dropdown-menu">
+                       		
+							<li>
+                       			<a href="#">澎湖永續發展與治理-從虎井嶼開始井</a>
+                       		</li>
+                      		<li>
+                       			<a href="#">澎湖文化創意產業未來人才之培育模式</a>
+                       		</li>
+                       		<li>
+                       			<a href="#">在地文化行動學習系統建置與應用研究</a>
+                       		</li>
+                       		<li class="my_li">
+                       			<a href="#">離島社區育成與永續經營—以湖西偏鄉為起點</a>
+                       		</li>
+                       		<li>
+                       			<a href="#">青年洄游農村社區產業再生模式-以馬公市為例</a>
+                       		</li>
+                       		<li>
+                       			<a href="#">海洋文化社區(群)的轉型-人文運旅整合創新服務模式</a>
+                       		</li>
+                       		<li>
+                       			<a href="#">菊島全民樂活閱讀創新推廣計畫-以白沙圖書館為起點</a>
+                       		</li>
+                       		
+                       		
+                       		<li>
+                       			<a href="#">以方法-目的鏈探究島嶼深度旅遊之目的地意象、重要因素與價值內涵</a>
+                       		</li>
+                       </ul>
+                    </li>
+                    <li>
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">發表平台 <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="/pculture">實踐紀要</a></li>
+							<li><a href="/build">研究手札</a></li>
+							<li><a href="/animal">期刊論文</a></li>
+							<li><a href="publish.html">發表新文章</a></li>
+						</ul>
+                    </li>
+                    <li>
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">有關於計畫 <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="culture.html">最新消息</a></li>
+							<li><a href="build.html">友站連結</a></li>
+						</ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+   <div class="container">
+  	<div class="row">
+      <div class="my_pubilc">
+         <h2>發表新文章</h2>
+         <form name="sentMessage" id="" novalidate action="/insertpublish?${_csrf.parameterName}=${_csrf.token}" method="POST" enctype="multipart/form-data">
+         	
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>標題:</label>
+                            <td><input type="text" class="form-control" name="title" value="" id="" required="" data-validation-required-message="Please enter your title."></td>
+                            <p class="help-block"></p>
+                      </div>
+         		    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>發表人:</label>
+                            <td><input type="text" class="form-control" name="author" value="" id="" required="" data-validation-required-message="Please enter your name."></td>
+                            <p class="help-block"></p>
+                      </div>
+         		    </div>
+                  <div class="my_posted_by">
+                   <h4>發表人聯絡方式</h4>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>姓名:</label>
+                            <td><input type="text" class="form-control" name="postauthor" value="" id="" required="" data-validation-required-message="Please enter your name."></td>
+                        <div class="help-block"></div></div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>單位:</label>
+                            <td><input type="text" class="form-control" name="Units" value="" id="" required="" data-validation-required-message="Please enter your employer."></td>
+                        <div class="help-block"></div></div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>職稱:</label>
+                            <td><input type="text" class="form-control" name="position" value="" id="" required="" data-validation-required-message="Please enter your job."></td>
+                        <div class="help-block"></div></div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>E-mail:</label>
+                            <td><input type="email" class="form-control" name="email" value="" id="" required="" data-validation-required-message="Please enter your email address."></td>
+                        <div class="help-block"></div></div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>電話:</label>
+                            <td><input type="tel" class="form-control" name="phone" id="" value="" required="" data-validation-required-message="Please enter your phine number."></td>
+                        <div class="help-block"></div></div>
+                    </div>
+                  </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>文章類型:</label>
+                            <td><select name="class" class="form-control">
+								<option value="1" selected >實踐紀要</option>  
+								<option value="2">研究手札</option> 
+								<option value="3">期刊論文</option>
+							</select></td>
+
+                        <div class="help-block"></div></div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>發表時間:</label>
+                            <td><input type="date" class="form-control" name="posttime" value="" id="" required="" data-validation-required-message="請輸入發表時間"></td>
+                        <div class="help-block"></div></div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>發表處:</label>
+                            <td><input type="text" class="form-control" name="postloc" value="" id="" required="" data-validation-required-message="請輸入文章發表處"></td>
+                        <div class="help-block"></div></div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>摘要:</label>
+                            <td><textarea class="form-control" name="summary" value="" id="" required data-validation-required-message="請輸入文章摘要，最少20字"></textarea></td>
+								<div class="help-block"></div></div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>關鍵字:</label>
+                            <td><input type="text" class="form-control" name="keyword" value="" id="" required data-validation-required-message="請輸入文章內容，最少200字"></td>
+								<div class="help-block">請用，隔開</div></div>
+                    </div>
+                                 <div class="control-group form-group">
+                        <div class="controls">
+                            <label>訊息圖片:</label>
+                            <td><input type="file" name = "uploadname"  class="upl"></td>
+						</div>	
+                    </div>      
+                    
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>內文:</label>
+                            <td><textarea name="paper">請輸入文章內容</textarea></td>
+						</div>	
+                    </div>                   
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <label>參考資料來源:</label>
+                            <td><input type="text" class="form-control" name="data" value="" reference_source id="" required data-validation-required-message="請輸入文章內容，最少200字"></td>
+								<div class="help-block"></div></div>
+                    </div>
+                    <div id="success"></div>
+                    <!-- For success/fail messages -->
+                    				<tr>
+					<td colspan='2'><input name="submit" type="submit"
+						value="submit" /></td>
 				</tr>
-				  </tbody>
 			</table>
-			<input  type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" /> 
-	</form>
-</div>
+
+			<input type="hidden" name="${_csrf.parameterName}"
+				value="${_csrf.token}" />
+         </form>
+        </div>
+	</div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+        </footer>
+
     </div>
-  
-	  
-</main>
-<footer>
-<hr>
-	<p>
-			本網站由中央研究院數位文化中心協助維護。<br><br>
-			Copyright © 2014 科技部人文創新與社會實踐資料庫建置計畫 All Rights Reserved.<br><br>
-			「新作坊」採用創用CC(Creative Commons)姓名標示─非商業性─禁止改作 3.0 台灣授權條款，歡迎在遵守授權條款的情況下，自由使用與流通本平台的研究資訊與深度調查成果。
-  </p>
-</footer>
+    <!-- /.container -->
+    
+    
+
+    <!-- jQuery -->
+    <script src="resources/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="resources/js/bootstrap.min.js"></script>
+    
+
 </body>
+
 </html>

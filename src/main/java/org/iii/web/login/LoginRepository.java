@@ -92,11 +92,11 @@ public class LoginRepository {
 
 	}
 	
-	public int insertpub(String title, String author, String contact_name,String contact_phone,String unit,String job_title,int article_type,String publish_time,String publish,String Introduction,String keyword,String content,String reference_source)
+	public int insertpub(String title, String author, String contact_name,String contact_phone,String unit,String job_title,int article_type,String publish_time,String publish,String Introduction,String keyword,String content,String reference_source, String img)
 	{ 
-		String sql = "INSERT INTO post_platform(title,author,contact_name,contact_phone,unit,job_title,article_type,publish_time,publish,Introduction,keyword,content,reference_source) VALUE(?,?,?,?,?,?,?,?,?,?,?,?,?) ";
+		String sql = "INSERT INTO post_platform(title,author,contact_name,contact_phone,unit,job_title,article_type,publish_time,publish,Introduction,keyword,content,reference_source,file) VALUE(?,?,?,?,?,?,?,?,?,?,?,?,?,?) ";
 		int updateCount = jdbcTemplate.update(sql,
-				new Object[] { title,author, contact_name,contact_phone,unit,job_title,article_type,publish_time,publish,Introduction,keyword,content,reference_source });
+				new Object[] { title,author, contact_name,contact_phone,unit,job_title,article_type,publish_time,publish,Introduction,keyword,content,reference_source, img});
 		return updateCount;
 
 	}
@@ -108,5 +108,30 @@ public class LoginRepository {
 		return contentList;
 
 	}
+	
+	public List selectBlogContent(int t) {
+		String sql = "SELECT * FROM post_platform WHERE po_id = ?";
+		List<Map<String, Object>> contentList = this.jdbcTemplate.queryForList(sql, t);
+		HashMap<Integer,String> topicMap = new HashMap<Integer,String>();			
+		return contentList;
+
+	}
+	
+	public List selectNewsContent() {
+		String sql = "SELECT * FROM `post_platform` ORDER BY publish_time DESC";
+		List<Map<String, Object>> list = this.jdbcTemplate.queryForList(sql);
+		HashMap<Integer,String> topicMap = new HashMap<Integer,String>();			
+		return list;
+
+	}
+	
+	public List selectNewestContent(int n) {
+		String sql = "SELECT * FROM `post_platform` ORDER BY publish_time DESC Limit "+n;
+		List<Map<String, Object>> list = this.jdbcTemplate.queryForList(sql);
+		HashMap<Integer,String> topicMap = new HashMap<Integer,String>();			
+		return list;
+
+	}
+	
 	
 }

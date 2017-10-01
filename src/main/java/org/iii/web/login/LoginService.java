@@ -78,11 +78,30 @@ public class LoginService {
 	
 	}
 	
-	public int insertpub(String title, String author, String contact_name,String contact_phone,String unit,String job_title,int article_type,String publish_time,String publish,String Introduction,String keyword,String content,String reference_source) {
+	public int insertpub(String title, String author, String contact_name,String contact_phone,String unit,String job_title,int article_type,String publish_time,String publish,String Introduction,String keyword,String content,String reference_source, String img) {
 
-		int updateCount = loginRepository.insertpub(title,author, contact_name,contact_phone,unit,job_title,article_type,publish_time,publish,Introduction,keyword,content,reference_source);
+		int updateCount = loginRepository.insertpub(title,author, contact_name,contact_phone,unit,job_title,article_type,publish_time,publish,Introduction,keyword,content,reference_source, img);
 		return updateCount;
 	
 	}
+	
+	public List selectBlogContent(int toID) {
+		List content = loginRepository.selectBlogContent(toID);
+		return content;
+	
+	}
+	
+	public List getNewsContent() {
+
+		List newsContent = loginRepository.selectNewsContent();
+		return newsContent;
+	
+	}
+	
+	public List selectNewestTitle(int n){
+		List title = loginRepository.selectNewestContent(n);
+		return title;
+	}
+	
 	
 }

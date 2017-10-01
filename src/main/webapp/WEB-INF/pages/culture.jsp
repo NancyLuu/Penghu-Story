@@ -1,185 +1,344 @@
-﻿<!doctype html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<meta charset="utf-8">
-<script async defer
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC0YHjxhTqUPSIQtCRRLPsKmYZ8NUmiX00&callback=initMap">
-</script>
-<script>
-function openBlock(evt, cityName) {
-    // Declare all variables
-    var i, tabcontent, tablinks;
 
-    // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
+    <title>澎湖故事島</title>
 
-    // Show the current tab, and add an "active" class to the link that opened the tab
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-} 
-</script>
-<link href="/resources/css/hiasp.css" rel="stylesheet" type="text/css">
-<title>文化學習</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="resources/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="resources/css/modern-business.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="resources/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
+    <!-- My set css -->
+    <link href="resources/css/my_.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 
 <body>
-<header class="primary_header">
- <div class="header_icon">
-    <a href="/"><img src="/resources/pic/Icon.jpg" alt=""  width="249" height="auto"/></a>
-  <p>Humanity lnnovation and Social Practice </p>
-  </div>
-  <div class="header_ul">
-<ul class="drop-down-menu">
-	  <li><a href="">關於</a>
-    	<ul>
-			<li><a href="/origin">計畫緣起</a></li>
-			<li><a href="/team">計畫支援團隊</a></li>
-			<li><a href="/contact">聯絡我們</a></li>
-    	</ul>
-    </li>
-	  <li><a href="">實踐研究團隊</a>
-    	<ul>
-			<li><a href="/culture">文化學習</a></li>
-    	</ul>
-	</li>
-	  <li><a href="">發表平台</a>
-    	<ul>
-			<li><a href="/pculture">文化</a></li>
-			<li><a href="/build">建築</a></li>
-			<li><a href="/animal">生物</a></li>
-   			<li><a href="/publish">發表新文章</a></li>
-    	</ul>
-    </li>
-  </ul>
-  </div>
-</header>
-	<main class="container">
-	<div class="contact_map" style="position: relative; overflow: hidden;">
+<!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+           <div class="navbar-brand"><a class="navbar-brand" href="index.html"><img src="resources/img/icon.png" alt="" width="200em"/></a></div>
+      <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+			</div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">關於我們 <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="origin.html">計畫緣起</a>
+                            </li>
+                            <li>
+                            	<a href="team.html">計畫支援團隊</a>
+                            </li>
+							<li>
+								<a href="contact.html">聯絡我們</a>
+								</li>
+						</ul>
+                    </li>
+                    <li>
+                       <a href="" class="dropdown-toggle" data-toggle="dropdown"> 計畫團隊 <b class="caret"></b></a>
+                         <ul class="dropdown-menu">
+                       		
+							<li>
+                       			<a href="/plan1">澎湖永續發展與治理-從虎井嶼開始井</a>
+                       		</li>
+                      		<li>
+                       			<a href="/plan2">澎湖文化創意產業未來人才之培育模式</a>
+                       		</li>
+                       		<li>
+                       			<a href="/plan3">在地文化行動學習系統建置與應用研究</a>
+                       		</li>
+                       		<li class="my_li">
+                       			<a href="/plan4">離島社區育成與永續經營—以湖西偏鄉為起點</a>
+                       		</li>
+                       		<li>
+                       			<a href="/plan5">青年洄游農村社區產業再生模式-以馬公市為例</a>
+                       		</li>
+                       		<li>
+                       			<a href="/plan6">海洋文化社區(群)的轉型-人文運旅整合創新服務模式</a>
+                       		</li>
+                       		<li>
+                       			<a href="/plan7">菊島全民樂活閱讀創新推廣計畫-以白沙圖書館為起點</a>
+                       		</li>
+                       		
+                       		
+                       		<li>
+                       			<a href="/plan8">以方法-目的鏈探究島嶼深度旅遊之目的地意象、重要因素與價值內涵</a>
+                       		</li>
+                       </ul>
+                    </li>
+                    <li>
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">發表平台 <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="/pculture">實踐紀要</a></li>
+							<li><a href="/build">研究手札</a></li>
+							<li><a href="/animal">期刊論文</a></li>
+							<li><a href="publish.html">發表新文章</a></li>
+						</ul>
+                    </li>
+                    <li>
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">有關於計畫 <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="/news">最新消息</a></li>
+							<li><a href="friendly.html">友站連結</a></li>
+						</ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+	<div class="my_map" style="position: relative; overflow: hidden;">
    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.8127310788655!2d119.57870061458547!3d23.575168384676033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346c5add718feef7%3A0xd817f6ff5d943186!2z5ZyL56uL5r6O5rmW56eR5oqA5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1486440591570" width="100%" height="100%" allowfullscreen></iframe> </div>
-   <div class="team_header">
-   	<h3>附屬單位</h3>
-   	<h2>單位名稱</h2>
-   </div>
-<div>
- <ul class="tab" >
-  <li><a href="javascript:void(0)" class="tablinks" onclick="openBlock(event, 'Explanation')">議題說明</a></li>
-  <li><a href="javascript:void(0)" class="tablinks" onclick="openBlock(event, 'Place')">實踐場地</a></li>
-  <li><a href="javascript:void(0)" class="tablinks" onclick="openBlock(event, 'Design')">行動設計方案</a></li>
-  <li><a href="javascript:void(0)" class="tablinks" onclick="openBlock(event, 'Member')">成員介紹</a></li>
-  <li><a href="javascript:void(0)" class="tablinks" onclick="openBlock(event, 'Situation')">推動現況與成果</a></li>
-</ul>
-<div id="Explanation" class="tabcontent" style="display:block;">
-  <div>
-  <h3>展齡中心社區自營模式研究 （北醫行動場域）</h3>
-	<p>子計畫一以「展齡中心的自營模式研究」為主要議題，以行動研究方法探索，目前由臺北醫學大學提供服務、公部門提供資源所支持的展齡中心，如何能夠成為社區自主營運活力展齡(active aging)據點？經行動研究人員初步田野參與觀察發現，展齡中心目前在服務使用者心目中，是優良服務提供方，換言之，如何透過行動方案設計，進一步促成長者間的互助合作，社區長者與青壯年的互助合作，讓社區的自主性力量，融入展齡中心的日常運作當中，是最為關鍵的議題。</p>
+    <!-- Page Content -->
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-lg-12">
+               <div class="col-md-6">
+                <h2 class="page-header">文化學習</h2></div>
+                <div class="my_link_icon">
+                       <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
+                       <a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
+                      <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
+            	</div>
+            </div>
 
-	<h3>提升高齡社區活躍老化之參與式照護（暖暖行動場域）</h3>
+            <div class="col-lg-12">
 
-	<p>本次計畫希望透過實踐方案的設計，促進社區中新舊居民相互熟稔，世代之間互助，共同創造社區共老的機制與平台。我們希望『翻轉傳統高齡醫療』，並引入照護資源，創造都市邊緣社區的在地老化機制。此外，我們也希望達成『世代參與、守護家鄉』，透過建立社區平台，促進新舊居民參與公共議題，活絡社區內在的機能與生態。我們將以此兩大目標為導向，去實踐照護（care）的四個面向：醫療、社會、文化、生態，以達到在地老化的願景。</p>
-	  <h3>以原民文化與生態為特色的泰雅族在地展齡模式 （尖石後山行動場域）</h3>
-	<p>本計畫關心的議題與實作方向在於，如何建構以泰雅文化為基礎的健康照護與在地老化機制。每個文化都有自己的醫療與照護體系，當代主流的醫療照護追隨歐美的發展而日新月異，但在醫護關係中的文化敏感度卻一直懸宕不前。因此，我們未來希望透過本計畫，以尖石部落為實作場域，欲達成以下目標：1. 建構生態健康服務的在地知識2. 提升展齡照護的文化敏感度3. 強化自主的照護經濟模式。</p>
+                <ul id="myTab" class="nav nav-tabs nav-justified">
+                    <li class="active"><a href="#service-one" data-toggle="tab"><i class="fa fa-calendar-o"></i> 計畫說明</a>
+                    </li>
+                    <li class=""><a href="#service-two" data-toggle="tab"><i class="fa fa-certificate"></i> 實踐場域</a>
+                    </li>
+                    <li class=""><a href="#service-three" data-toggle="tab"><i class="fa fa-support"></i> 行動方案設計</a>
+                    </li>
+                    <li class=""><a href="#service-people" data-toggle="tab"><i class="fa fa-group"></i> 成員介紹</a>
+                    </li>
+                    <li class=""><a href="#service-file" data-toggle="tab"><i class="fa fa-file"></i> 執行現況與成果</a>
+                    </li>
+                </ul>
 
-	<h3>影響活力展齡社區發展之社會結構與組織特性：跨城鄉與族群比較 (跨領域行動場域)</h3>
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade active in" id="service-one" style="height: 700px;">
+                        <h4>計畫說明</h4>
+                        <p>本延續型計畫的主題是「邁向綠活大台南：建構大學與社區共學、共作、共創社會力的行動網」，其目的在於將本校（成功大學）教學研究資源導向大台南城鄉社區，在本計畫第一期迄今所經營的實踐場域進行有關大台南在地「社會經濟」發展模型的實驗與建構。</p>
+                        <p>第一期的經驗使得本計畫團隊體認到，社區（或地區）若因為我們的社會實踐而產生正向的改變，這不但意味本校是這些改變的促成因素之一，而且也意味本校也會隨著這些改變而產生研究教學方面的正向變革。在這個意味下，本校和我們實踐場域所涵蓋的社區都是彼此平等互惠的行動夥伴。有鑑於此，本計畫擬在第二期彰顯大學如何可能藉著社會實踐型的研究與教學，和在地社區之間形成共同成長發展的互動與互惠關係。</p>
+                        <p>我們擬透過以下焦點議題來整合第一期在城鄉社區所形成的人文創新與社會實踐之團隊能量，針對台南城鄉普遍面臨的發展困境，提出一套由大學和社區協力加以解決的模式：(1)社區高齡少子化所衍生的議題，(2)慣行農法所造成的生態和食安議題，以及(3)大學如何善盡社會責任，透過課程改革，將學生導入在地社區進行學習和實作，讓大學和不同的夥伴社區一起打造本計畫所謂「共創社會力的行動網」，藉此激發社區主動、集體且持久的發展動力。</p>
+                    </div>
+                    <div class="tab-pane fade" id="service-two">
+                        <h4>實踐場域</h4>
+   						<div class="place_thumbnail" style="height: 700px; background: inherit">
+						<div class="col-md-4 text-center">
+							<div class="place_thumbnail">
+								<img class="img-responsive" src="img/culture_plan_01.png" alt="">
+								<div class="caption">
+								  <h5>銀同及其週邊區域</h5>
+								  <p>銀同社區位於台南市市中心歷史性商業區的孔廟文化園區。此地區的街廓內部以居住機能為主，沿街是商業機能為主的土地建物使用結構。就銀同社區而言，社區65歲以上老人占里內總人口數1355人的18.6% (275人)，近兩三年間社區街廓內已進駐、以及計畫施工中的文創店家，將近有約三十間。居住人口的高齡化、文創商店進入居住機能為主的街廓內部造成住商相互干擾，是此地區發展所面臨的主要問題，亦是台南市市中心的舊城歷史區域普遍存在的問題。此成為此實作場域的實作議題。</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 text-center">
+							<div class="place_thumbnail">
+								<img class="img-responsive" src="img/culture_plan_02.png" alt="">
+								<div class="caption">
+									<h5>嶺南及其週邊的大東原地區</h5>
+								  <p>範圍在東山區國道三號以東，烏山山脈以西的淺山丘陵地帶，聚落與農業經營多落在海拔 100至300公尺之間，包含南溪、水雲、林安、嶺南、東原、南勢、青山、高原八個里。大東原地區是一個在自然環境與歷史文化具有共同體特色的風土地域，1720年代來自閩籍與粵籍的漢人移民於此建立聚落，帶來漢族的生活文化與產業生計模式，例如延續至今的「東山迎佛祖」祭典與龍眼種植與烘焙文化。</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 text-center">
+							<div class="place_thumbnail">
+								<img class="img-responsive" src="img/culture_plan_03.png" alt="">
+								<div class="caption">
+								<h5>公舘社區及其週邊區域</h5>
+									
+									<p>該社區至2014年2月人口約有408戶1055 人，社區65歲以上約有245人，平時常住人口約500人，其中老年人有200餘人，使得社區人口結構實際上已達是「超超高齡」的嚴重程度。當地多以務農維生，主要產物是竹筍、香蕉、番石榴、楊梅、破布子、龍眼、芒果等。教育、衛生與治安機構多已經被廢除，學童主要是靠左鎮國小校車接送，衛生服務目前仰賴兩週一次的骨科巡迴醫療與兩個月一次的左鎮衛生所護士，治安則是採合署辦公的方式，由左鎮分駐所提供。廢校之岡林國小經當地發展協會之努力，為居民聚會的主要場所。</p>
+								</div>
+							</div>
+						</div>
+                        </div>
+                     
+                    </div>
+                    
+                    
+                  <div class="tab-pane fade" id="service-three" style="height: 700px;">
+                    <h4>行動設計方案</h4>
+					  <p><strong>銀同及其週邊區域<br></strong> </p>
+                        <p>本計畫與在地團體合作模式的規劃包括： </p>
+                        <p>1. 在社區發展協會可運作的銀同社區與文昌社區，與其一起工作、推動實作方案； </p>
+                        <p>2. 在社區發展協會不易運作的三民里，則與古都保存再生基金會、五條港發展協會、台南市YMCA等三個NPO合作推動； </p>
+                        <p>3. 連結附近的在地醫院新樓醫院與郭綜合醫院、舊城學校台南女中與光華高中，以及莉莉冰果店與奉茶等店家，一起支援協助推動。 </p>
+					    <p><strong>嶺南及其週邊的大東原地區</strong></p> 
+					  <p>該地區目前所面臨的發展困境包括： </p>
+                       <p>1. 農業勞動力缺乏：大東原地區的人口外移及老化情形比台南市平均值略高。人口結構影響當地經濟模式、社會關懷網絡與生活文化傳承。</p> 
+                        <p>2. 小農經濟的雙重困境：在當前資本主義經濟的運作邏輯之下，農民面對價格低落的苦惱，只好使用更多外部投入（化肥及農藥）以求提高產量、維繫收入，但此舉卻更進一步破壞了賴以為生的自然與生態，陷入了惡性循環的發展模式。 </p>
+					  <p>和在地團體合作的模式： </p>
+                    <p>1.與環境友善小農建立共學與協作：在第一期已組織起旨在倡議大東原友善土地耕作的「五酷山農團」（擴及嶺南、高原、青山、南勢四里的9戶農戶），以環境友善之農業經營為目標，持續陪伴與運作。第二期亦將以此為基礎，擴及更多農友願意投入與合作。 </p>
+                     <p>2.與在地相關公私組織合作：第一期工作中，串連起東山區公所、東山區農會、東山在地產銷合作社（東山、高青、旭山）、八個里的社區發展協會，以龍眼產業文化加值為共同目標，發展協力合作模式。第二期亦將與上述在地公私組織進行合作，以建置在地工作站的模式，搭建合作平台、促進各組織間的交流與互動。</p>
+					  <p><strong>公舘社區及其週邊區域</strong></p>
+                   <p> 研究團隊在該社區已經開始執行以遠距課後輔導為主的「學伴計畫」，該計畫整合了許多外部資源/支援，除了本校多個單位和31位志工同學參與執行外，協力單位包括：該社區的岡林教會、左鎮國中、輔仁大學台灣偏鄉教育關懷中心、T22中小學教育聯盟、崑山科技大學、全國學生學習成就測驗協會、以及旭聯科技、綠色奇蹟、蚵寮小搖滾等民間企業和團體。此外，本計畫將在該社區及鄰近區域進行生態旅遊和導覽的實作方案，合作單位包括：史前博物館南科籌備處、台南野鳥協會、荒野保護協會、貓狗119、鄭羽桑美術館、左鎮國小、左鎮國中、新化社大、以及中華探索教育發展協會(CAEDA)。</p>
+                    </div>
+                    
+                    
+                    <div class="tab-pane fade" id="service-people">
+                        <h4>行政平台</h4>
+   						<div class="thumbnail" style="background: inherit">
+						<div class="col-md-4 text-center">
+							<div class="thumbnail">
+								<img class="img-responsive" src="img/culture_01.png" alt="">
+								<div class="caption">
+							  <h5>計畫主持人</h5>
+								  <h3>李宗儒<br>
+								    <small>國立澎湖科技大學 助理教授</small> </h3>
+								  <p>
+									  </p>
+									<ul class="list-inline">
+										<li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
+										</li>
+										<li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
+										</li>
+										<li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 text-center">
+							<div class="thumbnail">
+								<img class="img-responsive" src="img/culture_02.png" alt="">
+								<div class="caption">
+									<h3>林明翰<br>
+										<small>國立澎湖科技大學 學生</small>
+									</h3>
+									<p></p>
+									<ul class="list-inline">
+										<li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
+										</li>
+										<li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
+										</li>
+										<li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 text-center">
+							<div class="thumbnail">
+								<img class="img-responsive" src="http://placehold.it/750x450" alt="">
+								<div class="caption">
+									<h3>呂子芸<br>
+										<small>國立澎湖科技大學 學生</small>
+									</h3>
+									<p></p>
+									<ul class="list-inline">
+										<li><a href="#"><i class="fa fa-2x fa-facebook-square"></i></a>
+										</li>
+										<li><a href="#"><i class="fa fa-2x fa-linkedin-square"></i></a>
+										</li>
+										<li><a href="#"><i class="fa fa-2x fa-twitter-square"></i></a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+                     </div>
+                </div>
+				<div class="tab-pane fade" id="service-file" style="height: 700px;">
+                        <h4>執行現狀及成果報告</h4>
+                        
+                        <div class="col-md-4">
+							<div class="media">
+								<div class="pull-left">
+									<span class="fa-stack fa-2x">
+										  <i class="fa fa-circle fa-stack-2x text-primary"></i>
+										  <i class="fa fa-paper-plane fa-stack-1x fa-inverse"></i>
+									</span> 
+								</div>
+								<div class="media-body">
+									<h4 class="media-heading">Service Seven</h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
+								</div>
+							</div>
+							<div class="media">
+								<div class="pull-left">
+									<span class="fa-stack fa-2x">
+										  <i class="fa fa-circle fa-stack-2x text-primary"></i>
+										  <i class="fa fa-space-shuttle fa-stack-1x fa-inverse"></i>
+									</span> 
+								</div>
+								<div class="media-body">
+									<h4 class="media-heading">Service Eight</h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
+								</div>
+							</div>
+							<div class="media">
+								<div class="pull-left">
+									<span class="fa-stack fa-2x">
+										  <i class="fa fa-circle fa-stack-2x text-primary"></i>
+										  <i class="fa fa-recycle fa-stack-1x fa-inverse"></i>
+									</span> 
+								</div>
+								<div class="media-body">
+									<h4 class="media-heading">Service Nine</h4>
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo itaque ipsum sit harum.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+                </div>
+            </div>
+        </div>
+        <hr>
 
-	<p>對本計畫而言，實作與反思可以說是並重並行的二個部份。在行動方面，我們透過各種在地的行動，與當地居民、團體合作達到活力展齡的目標。因此，我們在行動的同時，仍然持續的進行反思。透過參與各場域的活動、蒐集資料，我們研擬相關研究以瞭解各種行動的成效。除此之外，我們也透過比較各場域的不同脈絡來思考未來行動的可能方向。計畫中的各個場域有各自的脈絡，不論以城鄉、人口、族群、經濟面向來看皆然。如何瞭解各場域的社會結構，進而調整行動的方向，又如何在不同的脈絡中達到一致的願景（活力展齡），這亦是重要的議題。</p>
-</div>
-</div>
-<div id="Place" class="tabcontent">
-  <div style="height: 1200px">
-  	<div class="place_block">
-  		<h3>中平部落：一串小米工作室</h3>
-	<p>中平部落行政區屬於花蓮縣卓溪鄉太平村，太平村由Tavila（太平）部落、Nakahila（中平）與Valau（中興）三個部落組成。人口約800人，95%為布農族人，以巒社群（Tabaknuaz）分佈最廣。太平村的布農族人自18世紀開始因耕地獵場不足、日人集團移住等不同原因，陸續自南投經中央山脈遷移至此。</p>
- 	<p>由於郡社群的布農語是布農族裡的主導語言，比如巒社群這樣的非優勢方言在學校布農語教育中也處於劣勢地位，而且有越來越被邊緣化的危險。部落的小朋友在學校學習布農語后與家人的個別發音甚至會產生分歧，同樣的直到近期巒社布農語的歌本、聖經才在教會中逐漸取代郡社群布農語。布農語在不同年齡層呈現極大的分化差異。六十歲以上的老年族人大都講一口流利的布農語，詞匯量及表達的靈活程度都很高；三、四十歲以上的中年人布農語在詞匯量和流利程度上有明顯差異，但他們的優勢在於布農語與漢語都具有比較高的運用水平，因此可以成為漢語與布農語、主流文化與布農文化溝通的重要橋樑；二十歲左右的青年族人族語掌握退化尤其嚴重，比較好的可以聽懂，差一些的完全無法使用族語進行溝通。仍在學校的國高中生如果沒有足夠的族語教學，恐怕布農語的流失會無法挽回。由於部落中還有相當一部分族語流利的中老年人，在此的人口結構下，提供全心致力於推行布農語的良好環境。也是成立「一串小米族語獨立出版工作室」的背景。</p>
-  	</div>
-  	<div class="place_block">
-  		<h3>中平部落：一串小米工作室</h3>
-	<p>中平部落行政區屬於花蓮縣卓溪鄉太平村，太平村由Tavila（太平）部落、Nakahila（中平）與Valau（中興）三個部落組成。人口約800人，95%為布農族人，以巒社群（Tabaknuaz）分佈最廣。太平村的布農族人自18世紀開始因耕地獵場不足、日人集團移住等不同原因，陸續自南投經中央山脈遷移至此。</p>
- 	<p>由於郡社群的布農語是布農族裡的主導語言，比如巒社群這樣的非優勢方言在學校布農語教育中也處於劣勢地位，而且有越來越被邊緣化的危險。部落的小朋友在學校學習布農語后與家人的個別發音甚至會產生分歧，同樣的直到近期巒社布農語的歌本、聖經才在教會中逐漸取代郡社群布農語。布農語在不同年齡層呈現極大的分化差異。六十歲以上的老年族人大都講一口流利的布農語，詞匯量及表達的靈活程度都很高；三、四十歲以上的中年人布農語在詞匯量和流利程度上有明顯差異，但他們的優勢在於布農語與漢語都具有比較高的運用水平，因此可以成為漢語與布農語、主流文化與布農文化溝通的重要橋樑；二十歲左右的青年族人族語掌握退化尤其嚴重，比較好的可以聽懂，差一些的完全無法使用族語進行溝通。仍在學校的國高中生如果沒有足夠的族語教學，恐怕布農語的流失會無法挽回。由於部落中還有相當一部分族語流利的中老年人，在此的人口結構下，提供全心致力於推行布農語的良好環境。也是成立「一串小米族語獨立出版工作室」的背景。</p>
-  	</div>
-  	<div class="place_block">
-  		<h3>中平部落：一串小米工作室</h3>
-	<p>中平部落行政區屬於花蓮縣卓溪鄉太平村，太平村由Tavila（太平）部落、Nakahila（中平）與Valau（中興）三個部落組成。人口約800人，95%為布農族人，以巒社群（Tabaknuaz）分佈最廣。太平村的布農族人自18世紀開始因耕地獵場不足、日人集團移住等不同原因，陸續自南投經中央山脈遷移至此。</p>
- 	<p>由於郡社群的布農語是布農族裡的主導語言，比如巒社群這樣的非優勢方言在學校布農語教育中也處於劣勢地位，而且有越來越被邊緣化的危險。部落的小朋友在學校學習布農語后與家人的個別發音甚至會產生分歧，同樣的直到近期巒社布農語的歌本、聖經才在教會中逐漸取代郡社群布農語。布農語在不同年齡層呈現極大的分化差異。六十歲以上的老年族人大都講一口流利的布農語，詞匯量及表達的靈活程度都很高；三、四十歲以上的中年人布農語在詞匯量和流利程度上有明顯差異，但他們的優勢在於布農語與漢語都具有比較高的運用水平，因此可以成為漢語與布農語、主流文化與布農文化溝通的重要橋樑；二十歲左右的青年族人族語掌握退化尤其嚴重，比較好的可以聽懂，差一些的完全無法使用族語進行溝通。仍在學校的國高中生如果沒有足夠的族語教學，恐怕布農語的流失會無法挽回。由於部落中還有相當一部分族語流利的中老年人，在此的人口結構下，提供全心致力於推行布農語的良好環境。也是成立「一串小米族語獨立出版工作室」的背景。</p>
-  	</div>
-  </div> 
-  </div>
-<div id="Design" class="tabcontent">
-  
-  <h3>展齡中心社區自營模式研究 （北醫行動場域）</h3>
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Your Website 2014</p>
+                </div>
+            </div>
+        </footer>
 
-<p>社區安全守門員：在人社計畫啟動前，展齡中心即已伸出觸角與社區進一步接觸。社區安全守門員的構想，是借重長者對社區空間的認識與觀察力，辨認出社區內有安全疑慮的角落，成立一支「發現社區問題的巡守隊」。<br>
-社區角落攝影課：搭配社區安全守門員方案，透過人社實踐計畫，展齡中心將連結信義社區大學講師與課程，嘗試以影像創作及展覽為媒介，以社區空間及人事物為主題，作為展齡中心與周邊社區民眾及公民團體的對話平台。<br>
-社區主題生活地圖：以長者日常生活的活動內容與空間為主題，共同製作社區生活地圖，例如公園綠地、市場、醫院診所藥局、里民活動中心、廟口等，除了可以更了解長者在社區中的生活空間及需求，也可以幫助團隊跳脫行政區劃，以「共同生活圈」來界定都市中的「社區」。<br>
-食農課程結合長者生命故事食譜：面對多元族群的社區居民背景，人社計畫預定結合通識與保健系課程，以大眾最容易接受的「食」為媒介，一方面帶出對彼此過去生活軌跡的互相理解，另一方面探索共同合作的可能性。</p>
-	<h3>提升高齡社區活躍老化之參與式照護（暖暖行動場域）</h3>
+    </div>
+    <!-- /.container -->
 
-<p>為了達到建立在地老化的機制與平台，我們將以以下為我們的實踐方針：
+    <!-- jQuery -->
+    <script src="resources/js/jquery.js"></script>
 
-人我關係的鏈結：從滿足老人的自我照顧/安全需求，到與多元團體的發展/連結，強化共同照顧基礎。<br>
-與歷史文化的關係重建：透過社區文史工作調查，聯繫老人與暖暖在地歷史，促進社會互動與支持。<br>
-與生態環境的關係發展：從醫療模式走向與環境共生的生態模式，融入暖暖特有的人文生態與公共意識。<br>
-以原民文化與生態為特色的泰雅族在地展齡模式 （尖石後山行動場域）<br>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="resources/js/bootstrap.min.js"></script>
 
-目前根據我們對於尖石後山社會需求的理解，我們提出以下五個行動的方針：<br>
-
-促進在地的互助經濟<br>
-尋求各方參與和合作<br>
-肯認在地傳統與文化價值<br>
-可持續地使用環境資源<br>
-建立代間的互助照護模式<br>
-影響活力展齡社區發展之社會結構與組織特性：跨城鄉與族群比較 (跨領域行動場域)<br>
-
-透過實證研究來瞭解：在不同場域、不同實踐模式的情況下，健康、安全、參與各構面對高齡者生活品質之關係。我們的行動方案有二：首先，量表的建立。我們建構健康、安全、參與三構面的量表，分析這些構面與展齡的關係。再者，參與觀察。我們透過參與各場域的實作行程，除了觀察各場域的樣貌，同時也瞭解實作活動中行動者（人、組織）間互動的情況，由此評估行動的影響。</p>
- 
-</div>
-<div id="Member" class="tabcontent">
-  <div style="height: 300px">
-<div class="member">
-	<h3>計畫主持人</h3>
-	<h2>name</h2>
-	<p>經歷</p>
-</div>
-<div class="member">
-	<h3>計畫主持人</h3>
-	<h2>name</h2>
-	<p>經歷</p>
-</div>
-<div class="member">
-	<h3>計畫主持人</h3>
-	<h2>name</h2>
-	<p>經歷</p>
-</div>
-<div class="member">
-	<h3>計畫主持人</h3>
-	<h2>name</h2>
-	<p>經歷</p>
-</div>
-</div>
-</div>
-<div id="Situation" class="tabcontent">
-	<p> 105年10月季會北醫工作報告</p>  File
- <p>尖石後山_全球環境危機與永續發展課程_行動式工作坊</p>  Youtube
- <p>105年8月季會北醫工作報告</p>  File
-</div> 
-</div>  
-</main>
-<footer>
-<hr>
-	<p>
-			本網站由中央研究院數位文化中心協助維護。<br><br>
-			Copyright © 2014 科技部人文創新與社會實踐資料庫建置計畫 All Rights Reserved.<br><br>
-			「新作坊」採用創用CC(Creative Commons)姓名標示─非商業性─禁止改作 3.0 台灣授權條款，歡迎在遵守授權條款的情況下，自由使用與流通本平台的研究資訊與深度調查成果。
-  </p>
-</footer>
 </body>
 
 </html>

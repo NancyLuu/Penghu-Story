@@ -1,5 +1,9 @@
 package org.iii.web.login;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 import java.util.Map;
 
@@ -21,6 +25,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -28,13 +33,20 @@ public class LoginController {
 	@Resource(name = "LoginService")
 	LoginService loginService;
 
-	@RequestMapping(value = { "/", "/welcome**" }, method = RequestMethod.GET)
+	@RequestMapping(value = {"/welcome**" }, method = RequestMethod.GET)
 	public ModelAndView defaultPage() {
 
 		
 		ModelAndView model = new ModelAndView();
 		model.addObject("title", "Spring Security Login Form - Database Authentication");
 		model.addObject("message", "This is default page!!!");
+		
+		List<Map<String, Object>> newsTitle = loginService.selectNewestTitle(1);
+		model.addObject("newsTitle", newsTitle);
+		for(Map<String, Object> i:newsTitle)
+		{
+			System.out.println(i);
+		}
 		
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		if (!(auth instanceof AnonymousAuthenticationToken)) {
@@ -54,10 +66,53 @@ public class LoginController {
 	        }
 		}
 
-		model.setViewName("hello");
+		model.setViewName("../../index");
 		return model;
 
 	}
+	
+	@RequestMapping(value = { "/" }, method = RequestMethod.GET)
+	public ModelAndView indexpage() {
+
+		
+		ModelAndView model = new ModelAndView();
+		model.addObject("title", "Spring Security Login Form - Database Authentication");
+		model.addObject("message", "This is default page!!!");
+		
+		List<Map<String, Object>> newsTitle = loginService.selectNewestTitle(1);
+		model.addObject("newsTitle", newsTitle);
+		for(Map<String, Object> i:newsTitle)
+		{
+			System.out.println(i);
+		}
+		
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if (!(auth instanceof AnonymousAuthenticationToken)) {
+			UserDetails userDetail = (UserDetails) auth.getPrincipal();
+			for (GrantedAuthority authority : userDetail.getAuthorities()) {
+	            if (authority.getAuthority().equals("ROLE_ADMIN"))
+	            {
+	    			List alluserinfo = loginService.getallUserinfo();
+	    			model.addObject("alluserinfo", alluserinfo);
+	            }
+	            else
+	            {
+	            	String username = userDetail.getUsername();
+	    			String useremail = loginService.getUserEmail(username);
+	    			model.addObject("useremail", useremail);
+	            }
+	        }
+		}
+
+		model.setViewName("../../index");
+		return model;
+
+	}
+	
+	
+	
+	
+	
 	
 	@RequestMapping(value = "/delete", method = RequestMethod.POST)
 	public ModelAndView deletePage(HttpServletRequest request,
@@ -200,6 +255,7 @@ public class LoginController {
 
 	}
 	//=====================new===============================
+	
 	@RequestMapping(value = "/contact", method = RequestMethod.GET)
 	public ModelAndView contactPage(HttpServletRequest request,
 			HttpServletResponse response) {
@@ -274,7 +330,10 @@ public class LoginController {
 		List content = loginService.selectContent(2);
 		model.addObject("animalContent", content);
 		
-		model.setViewName("animal");
+		List newsTitle = loginService.selectNewestTitle(2);
+		model.addObject("newsTitle", newsTitle);
+		
+		model.setViewName("Blog_3");
 		
 		return model;
 	}
@@ -287,10 +346,11 @@ public class LoginController {
 		
 		return model;
 	}
-	
+	private String saveDirectory = "C:/Users/kkjsu/git/projectweba/src/main/webapp/resources/img/";
 	@RequestMapping(value = "/insertpublish", method = RequestMethod.POST)
 	public ModelAndView inpublishPage(HttpServletRequest request,
-			HttpServletResponse response) {
+			HttpServletResponse response,@RequestParam("uploadname") MultipartFile fileUpload) throws Exception {
+		request.setCharacterEncoding("UTF-8");
 		
 		ModelAndView model = new ModelAndView();
 		String title = (String) request.getParameter("title");
@@ -308,13 +368,52 @@ public class LoginController {
 		String videolink = (String) request.getParameter("videolink");
 		String paper = (String) request.getParameter("paper");
 		String data = (String) request.getParameter("data");
+		String img = fileUpload.getOriginalFilename();
+		
+		byte[] bytes = fileUpload.getBytes();
+        File localFile = new File(saveDirectory+fileUpload.getOriginalFilename()); //path=¸ô®|+ÀÉ¦W
+        BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(localFile));
+        stream.write(bytes);
+        stream.close();
+		
+		
 		
 		System.out.println(title+" "+author+" "+postauthor+" "+units+" "+position+" "+
-		email+" "+phone+" "+pclass+" "+posttime+" "+postloc+" "+summary+" "+keyword+" "+videolink+" "+paper+" "+data);
+		email+" "+phone+" "+pclass+" "+posttime+" "+postloc+" "+summary+" "+keyword+" "+videolink+" "+paper+" "+data+" "+img);
 		
-		loginService.insertpub(title, author, postauthor, phone, units, position, pclass, posttime, postloc, summary, keyword, paper, data);
+		loginService.insertpub(title, author, postauthor, phone, units, position, pclass, posttime, postloc, summary, keyword, paper, data, img);
 		
 		model.setViewName("../../index");
+		
+		return model;
+	}
+	
+	@RequestMapping(value = "/news", method = RequestMethod.GET)
+	public ModelAndView newsPage() {
+		
+		ModelAndView model = new ModelAndView();
+		List content = loginService.getNewsContent();
+		model.addObject("newsContent", content);
+		
+		model.setViewName("News");
+		
+		return model;
+	}
+	
+	
+	@RequestMapping(value = "/load_blog", method = RequestMethod.GET)
+	public ModelAndView loadBlogPage(HttpServletRequest request,
+			HttpServletResponse response) throws UnsupportedEncodingException {
+		request.setCharacterEncoding("UTF-8");
+		
+		ModelAndView model = new ModelAndView();
+		String toID = (String) request.getParameter("pid");
+		
+		System.out.println(toID);
+		
+		List blogContent = loginService.selectBlogContent(Integer.parseInt(toID));
+		model.addObject("blogContent", blogContent);
+		model.setViewName("blog-post_1");
 		
 		return model;
 	}
@@ -325,7 +424,11 @@ public class LoginController {
 		ModelAndView model = new ModelAndView();
 		List content = loginService.selectContent(3);
 		model.addObject("buildContent", content);
-		model.setViewName("build");
+		
+		List newsTitle = loginService.selectNewestTitle(2);
+		model.addObject("newsTitle", newsTitle);
+		
+		model.setViewName("Blog_2");
 		
 		return model;
 	}
@@ -336,7 +439,11 @@ public class LoginController {
 		ModelAndView model = new ModelAndView();
 		List content = loginService.selectContent(1);
 		model.addObject("pcultureContent", content);
-		model.setViewName("pculture");
+		
+		List newsTitle = loginService.selectNewestTitle(2);
+		model.addObject("newsTitle", newsTitle);
+		
+		model.setViewName("Blog_1");
 		
 		return model;
 	}
@@ -389,4 +496,87 @@ public class LoginController {
 		
 		return model;
 	}
+	
+	
+	@RequestMapping(value = "/plan1", method = RequestMethod.GET)
+	public ModelAndView plan1Page() {
+		
+		ModelAndView model = new ModelAndView();
+		
+		model.setViewName("plan_1");
+		
+		return model;
+	}
+	
+	@RequestMapping(value = "/plan2", method = RequestMethod.GET)
+	public ModelAndView plan2Page() {
+		
+		ModelAndView model = new ModelAndView();
+		
+		model.setViewName("plan_2");
+		
+		return model;
+	}
+	
+	@RequestMapping(value = "/plan3", method = RequestMethod.GET)
+	public ModelAndView plan3Page() {
+		
+		ModelAndView model = new ModelAndView();
+		
+		model.setViewName("plan_3");
+		
+		return model;
+	}
+	
+	@RequestMapping(value = "/plan4", method = RequestMethod.GET)
+	public ModelAndView plan4Page() {
+		
+		ModelAndView model = new ModelAndView();
+		
+		model.setViewName("plan_4");
+		
+		return model;
+	}
+	
+	@RequestMapping(value = "/plan5", method = RequestMethod.GET)
+	public ModelAndView plan5Page() {
+		
+		ModelAndView model = new ModelAndView();
+		
+		model.setViewName("plan_5");
+		
+		return model;
+	}
+	
+	@RequestMapping(value = "/plan6", method = RequestMethod.GET)
+	public ModelAndView plan6Page() {
+		
+		ModelAndView model = new ModelAndView();
+		
+		model.setViewName("plan_6");
+		
+		return model;
+	}
+	
+	@RequestMapping(value = "/plan7", method = RequestMethod.GET)
+	public ModelAndView plan81Page() {
+		
+		ModelAndView model = new ModelAndView();
+		
+		model.setViewName("plan_7");
+		
+		return model;
+	}
+	
+	@RequestMapping(value = "/plan8", method = RequestMethod.GET)
+	public ModelAndView plan8Page() {
+		
+		ModelAndView model = new ModelAndView();
+		
+		model.setViewName("plan_8");
+		
+		return model;
+	}
+	
+	
 }
