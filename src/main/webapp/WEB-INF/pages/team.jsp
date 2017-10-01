@@ -228,6 +228,17 @@
 								</div>
 							</div>
 						</div>
+						<div class="col-md-4 text-center">
+							<div class="thumbnail">
+								<img class="img-responsive" src="http://placehold.it/750x450" alt="">
+								<div class="caption">
+									<h3>賴智駿<br>
+										<small>國立澎湖科技大學 資訊管理系學生</small>
+									</h3>
+									<p></p>
+								</div>
+							</div>
+						</div>
 						</div> 
                         
                     </div>
